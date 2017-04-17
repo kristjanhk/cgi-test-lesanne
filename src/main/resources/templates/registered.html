@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" media="screen"
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"/>
+    <link rel="stylesheet" media="screen" href="#" th:href="@{css/main.css}"/>
+</head>
+<body>
+<div class="container">
+    <div class="row valign-wrapper">
+        <div class="col s12 valign">
+            <div class="card blue-grey darken-1">
+                <div class="row card-content white-text">
+                    <div class="input-field col s12 center">
+                        <h3 class="center" th:text="#{registreerimine.ok}">registreerimine.ok</h3>
+                        <h4 class="center">
+                            <a href="#" th:href="@{/}" th:text="#{registreerimine.tagasi}">registreerimine.tagasi</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:defer="defer" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script th:defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+</body>
+</html>

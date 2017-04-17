@@ -1,6 +1,6 @@
 package com.cgi.dentistapp.dao.entity;
 
-import java.util.Date;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,14 +17,22 @@ public class DentistVisitEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "visit_time")
-    private Date visitTime;
+    @Column(name = "dentist_name")
+    private String dentistName;
+
+    @Column(name = "family_physician_name")
+    private String familyPhysicianName;
+
+    @Column(name = "visit_datetime")
+    private Calendar visitDateTime;
 
     public DentistVisitEntity() {
     }
 
-    public DentistVisitEntity(String dentistName, Date visitTime) {
-        this.setVisitTime(visitTime);
+    public DentistVisitEntity(String dentistName, String familyPhysicianName, Calendar visitDateTime) {
+        this.dentistName = dentistName;
+        this.familyPhysicianName = familyPhysicianName;
+        this.visitDateTime = visitDateTime;
     }
 
     public Long getId() {
@@ -35,12 +43,37 @@ public class DentistVisitEntity {
         this.id = id;
     }
 
-    public Date getVisitTime() {
-        return visitTime;
+    public String getDentistName() {
+        return dentistName;
     }
 
-    public void setVisitTime(Date visitTime) {
-        this.visitTime = visitTime;
+    public void setDentistName(String dentistName) {
+        this.dentistName = dentistName;
     }
 
+    public String getFamilyPhysicianName() {
+        return familyPhysicianName;
+    }
+
+    public void setFamilyPhysicianName(String familyPhysicianName) {
+        this.familyPhysicianName = familyPhysicianName;
+    }
+
+    public Long getVisitDateTime() {
+        return visitDateTime.getTime().getTime();
+    }
+
+    public void setVisitDateTime(Calendar visitDateTime) {
+        this.visitDateTime = visitDateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "DentistVisitEntity{" +
+                "id=" + id +
+                ", dentistName='" + dentistName + '\'' +
+                ", familyPhysicianName='" + familyPhysicianName + '\'' +
+                ", visitDateTime=" + visitDateTime +
+                '}';
+    }
 }

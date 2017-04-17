@@ -4,25 +4,31 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
+import java.util.Calendar;
 
-/**
- * Created by serkp on 2.03.2017.
- */
 public class DentistVisitDTO {
 
     @Size(min = 1, max = 50)
-    String dentistName;
+    private String dentistName;
+
+    @Size(min = 1, max = 50)
+    private String familyPhysicianName;
 
     @NotNull
     @DateTimeFormat(pattern = "dd.MM.yyyy")
-    Date visitTime;
+    private Calendar visitDate;
+
+    @NotNull
+    @DateTimeFormat(pattern = "HH:mm")
+    private Calendar visitTime;
 
     public DentistVisitDTO() {
     }
 
-    public DentistVisitDTO(String dentistName, Date visitTime) {
+    public DentistVisitDTO(String dentistName, String familyPhysicianName, Calendar visitDate, Calendar visitTime) {
         this.dentistName = dentistName;
+        this.familyPhysicianName = familyPhysicianName;
+        this.visitDate = visitDate;
         this.visitTime = visitTime;
     }
 
@@ -34,11 +40,27 @@ public class DentistVisitDTO {
         this.dentistName = dentistName;
     }
 
-    public Date getVisitTime() {
+    public String getFamilyPhysicianName() {
+        return familyPhysicianName;
+    }
+
+    public void setFamilyPhysicianName(String familyPhysicianName) {
+        this.familyPhysicianName = familyPhysicianName;
+    }
+
+    public Calendar getVisitDate() {
+        return visitDate;
+    }
+
+    public void setVisitDate(Calendar visitDate) {
+        this.visitDate = visitDate;
+    }
+
+    public Calendar getVisitTime() {
         return visitTime;
     }
 
-    public void setVisitTime(Date visitTime) {
+    public void setVisitTime(Calendar visitTime) {
         this.visitTime = visitTime;
     }
 }
