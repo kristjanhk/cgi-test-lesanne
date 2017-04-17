@@ -1,6 +1,7 @@
 /**
  * Created by Kristjan on 17.04.2017.
  */
+//todo kasutatud sõned messages.properties faili
 $(document).ready(function () {
     $(".datepicker").pickadate({ //kalender
         selectMonths: true,

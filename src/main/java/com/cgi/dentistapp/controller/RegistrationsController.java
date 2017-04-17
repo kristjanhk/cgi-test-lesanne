@@ -31,6 +31,8 @@ public class RegistrationsController {
         return "registrations";
     }
 
+    // TODO: 17.04.2017 kasutaja peaks ainult enda lisatud visiite kustutada ja muuta saama...
+
     //otsime ja tagastame json objektina ainult need visiidid, kus hambaarsti nimes leidus antud sõne
     @GetMapping(value = "/query/{queryString}", produces = "application/json")
     @ResponseBody
@@ -47,4 +49,6 @@ public class RegistrationsController {
         dentistVisitService.deleteVisit(Long.parseLong(deleteString));
         return ResponseEntity.ok().build();
     }
+
+    // TODO: 17.04.2017 visiidi muutmine
 }

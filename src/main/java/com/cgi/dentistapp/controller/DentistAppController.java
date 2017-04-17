@@ -29,6 +29,7 @@ public class DentistAppController {
         return "form";
     }
 
+    //registreerime visiidi
     @PostMapping
     public String postRegisterForm(@Valid DentistVisitDTO dentistVisitDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

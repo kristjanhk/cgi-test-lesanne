@@ -38,6 +38,7 @@ public class DentistVisitService {
     }
 
     public void addVisit(String dentistName, String familyPhysicianName, Calendar visitDate, Calendar visitTime) {
+        //kuupäev tuleb ühest lahtrist ja kellaaeg teisest
         visitDate.set(HOUR, visitTime.get(HOUR));
         visitDate.set(MINUTE, visitTime.get(MINUTE));
         dentistVisitRepository.save(new DentistVisitEntity(dentistName, familyPhysicianName, visitDate));
